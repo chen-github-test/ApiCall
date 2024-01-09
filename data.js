@@ -205,6 +205,106 @@
                     "https://www.apifox.cn/web/project/3877458/apis/api-140105676-run",
                 },
               },
+              "/v2/admin/UserTokenAction/Adjust": {
+                post: {
+                  summary: "调整token接口（数量以及过期日期）",
+                  "x-apifox-folder": "",
+                  "x-apifox-status": "developing",
+                  deprecated: false,
+                  description: "",
+                  tags: [],
+                  parameters: [
+                    {
+                      name: "authority",
+                      in: "header",
+                      description: "",
+                      required: true,
+                      example: "api-test.gengesports.cn",
+                      schema: { type: "string" },
+                    },
+                    {
+                      name: "authorization",
+                      in: "header",
+                      description: "",
+                      required: true,
+                      example:
+                        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJmYTlmOWVjMGU3YTgxMWVjYTQ4MTAyNDJhYzExMDAwOCIsImV4cCI6MTcwNDk1NzUyMywianRpIjoiOGRjN2MzODEtZGU5Zi00Y2JlLTlmZjEtYWRkMWY2OWFmNWRiIiwiaWF0IjoxNzA0MzUyNzIzLCJ1aWQiOiIxNjMiLCJzaWQiOiI2ZWYyM2VmMTY4Mjc0ZjBmYWE3MWM1Mjc0YmYyYWY5MSJ9.qVvNCp20FyJZnnjYMao2Sxa0t6DkheVT5n_QU0hMUOM",
+                      schema: { type: "string" },
+                    },
+                    {
+                      name: "content-type",
+                      in: "header",
+                      description: "",
+                      required: true,
+                      example: "application/json",
+                      schema: { type: "string" },
+                    },
+                    {
+                      name: "x-request-id",
+                      in: "header",
+                      description: "",
+                      required: true,
+                      example: "2f35b58a3e8f",
+                      schema: { type: "string" },
+                    },
+                  ],
+                  requestBody: {
+                    content: {
+                      "application/json": {
+                        schema: {
+                          type: "object",
+                          properties: {
+                            is_refund: { type: "boolean" },
+                            expire_date: { type: "string" },
+                            user_id: { type: "integer" },
+                            amount: { type: "integer" },
+                            note: { type: "string" },
+                          },
+                          required: [
+                            "is_refund",
+                            "expire_date",
+                            "user_id",
+                            "amount",
+                            "note",
+                          ],
+                          "x-apifox-ignore-properties": [],
+                          "x-apifox-orders": [
+                            "is_refund",
+                            "expire_date",
+                            "user_id",
+                            "amount",
+                            "note",
+                          ],
+                        },
+                        example: {
+                          is_refund: false,
+                          expire_date: "2024-01-10T06:20:11.326Z",
+                          user_id: 1297,
+                          amount: 1,
+                          note: "调整token 数量日期",
+                        },
+                      },
+                    },
+                  },
+                  responses: {
+                    200: {
+                      description: "成功",
+                      content: {
+                        "application/json": {
+                          schema: {
+                            type: "object",
+                            properties: {},
+                            "x-apifox-ignore-properties": [],
+                            "x-apifox-orders": [],
+                          },
+                        },
+                      },
+                    },
+                  },
+                  "x-run-in-apifox":
+                    "https://www.apifox.cn/web/project/3877458/apis/api-140125903-run",
+                },
+              },
             },
             components: { schemas: {} },
           },
